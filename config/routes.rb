@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+  get 'pages/new'
+  resources :pages
+
   get 'sessions/new'
 
   root'users#index'

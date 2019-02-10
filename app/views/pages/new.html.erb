@@ -1,0 +1,41 @@
+<!-- <h1>Pages#new</h1>
+<p>Find me in app/views/pages/new.html.erb</p> -->
+<h1 class="text-center text-white">TODO Detail</h1>
+  <%= form_for :@detail do |f| %>
+    <div class="form-group">
+      <%= f.label :title, class: "text-white" %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :note, class: "text-white" %>
+      <%= f.text_area :note, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :作業開始日, class: "text-white" %>
+      <%= f.date_field :opratingdate_start, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :作業終了予定日, class: "text-white" %>
+      <%= f.date_field :oparatingfinish_expection, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :作業終了日, class: "text-white" %>
+      <%= f.date_field :oparatingfinished, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :優先度, class: "text-white" %>
+      <%= f.select :priority,[['高','高'],['低','低']]%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :ステータス, class: "text-white" %>
+      <%= f.select :status,[['未着手','未着手'],['処理中','処理中'],['完了','完了']], :prompt=>"未着手"%>
+    </div>
+
+    <%= f.submit "登録", class: "btn-block btn-white" %>
+    <% end %>
