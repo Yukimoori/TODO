@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
   def new
-    # @detail = Detail.new
+    @page = page.new
   end
 
   def create
-    @detail = current_user.detail.new(detail_params)
+    @page = current_user.page.new(page_params)
 
-    if @detail.save
+    if @page.save
       redirect_to pages_new_path, success: '投稿に成功しました'
     else
       flash.now[:danger] = "投稿に失敗しました"
@@ -15,8 +15,10 @@ class PagesController < ApplicationController
   end
 
   private
-    def detail_params
-      params.require(:detail)
-      # .permit(:image, :description)
+  def create
+    @page = Page.new(page_params)
+    @page.user_id = current_user.id
+    if @page.save
     end
+  end
 end
