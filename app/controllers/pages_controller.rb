@@ -1,13 +1,16 @@
 class PagesController < ApplicationController
+  def index
+    @pages = Page.all
+  end
+
   def new
-    @page = page.new
+    @page = Page.new
   end
 
   def create
-    @page = current_user.page.new(page_params)
-
+    @page = Page.new(page_params)
     if @page.save
-      redirect_to pages_new_path, success: '投稿に成功しました'
+      redirect_to pages_index_path, success: '投稿に成功しました'
     else
       flash.now[:danger] = "投稿に失敗しました"
       render :new
@@ -15,10 +18,7 @@ class PagesController < ApplicationController
   end
 
   private
-  def create
-    @page = Page.new(page_params)
-    @page.user_id = current_user.id
-    if @page.save
+    def page_params
+      params.require(:page).permit(:title,:note,:op_start,:op_expection,:op_finished,:priority,:status)
     end
-  end
 end

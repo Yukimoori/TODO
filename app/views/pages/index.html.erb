@@ -1,2 +1,30 @@
-<h1>Pages#indes</h1>
-<p>Find me in app/views/pages/indes.html.erb</p>
+<table>
+
+<caption>TODO index</caption>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>title</th>
+  <th>note</th>
+  <th>作業開始日</th>
+  <th>作業終了予定日</th>
+  <th>作業終了日</th>
+  <th>優先度</th>
+  <th>ステータス</th>
+  </tr>
+  </thead>
+<% @pages.each do |page| %>
+<tbody>
+  <tr>
+  <td><%= page.id %></td>
+  <td><%= page.title %></td>
+  <td><%= page.note %></td>
+  <td><%= page.op_start %></td>
+  <td><%= page.op_expection %></td>
+  <td><%= page.op_finished %></td>
+  <td><%= page.priority %></td>
+  <td><%= page.status %></td>
+<% end %>
+</tr>
+</tbody>
+</table>
