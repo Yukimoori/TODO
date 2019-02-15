@@ -11,6 +11,8 @@
   <th>作業終了日</th>
   <th>優先度</th>
   <th>ステータス</th>
+  <th>編集</th>
+  <th>削除</th>
   </tr>
   </thead>
 <% @pages.each do |page| %>
@@ -24,7 +26,10 @@
   <td><%= page.op_finished %></td>
   <td><%= page.priority %></td>
   <td><%= page.status %></td>
+  <td><%= button_to "編集" ,edit_page_path(id: page.id),method: :get %></td>
+  <td><%= button_to "削除" ,page_path(id: page.id),method: :delete,data:{confirm:"本当に削除しますか？"} %></td>
 <% end %>
 </tr>
 </tbody>
 </table>
+<%= button_to '新規作成', new_page_path,method: :get %>

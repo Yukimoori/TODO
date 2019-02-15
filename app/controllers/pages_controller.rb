@@ -3,6 +3,10 @@ class PagesController < ApplicationController
     @pages = Page.all
   end
 
+  def edit
+    @page = Page.find(params[:id])
+  end
+
   def new
     @page = Page.new
   end
@@ -17,8 +21,21 @@ class PagesController < ApplicationController
     end
   end
 
+  def update
+    @page = Page.find(params[:id])
+    @page.update(page_params)
+    redirect_to pages_path
+  end
+
+  def destroy
+    @page = Page.find(params[:id])
+    @page.destroy
+    redirect_to pages_path
+  end
+
   private
     def page_params
       params.require(:page).permit(:title,:note,:op_start,:op_expection,:op_finished,:priority,:status)
     end
+    
 end
