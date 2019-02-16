@@ -37,5 +37,5 @@ class PagesController < ApplicationController
     def page_params
       params.require(:page).permit(:title,:note,:op_start,:op_expection,:op_finished,:priority,:status)
     end
-    
+
 end
