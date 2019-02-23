@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def new
