@@ -1,7 +1,7 @@
-<!-- <h1>Pages#new</h1>
-<p>Find me in app/views/pages/new.html.erb</p> -->
-<h1 class="text-center text-white">TODO Detail</h1>
-  <%= form_for @page do |f| %>
+<!-- <h1>tasks#edit</h1>
+<p>Find me in app/views/edit/new.html.erb</p> -->
+<h1 class="text-center text-white">TODO modify</h1>
+  <%= form_for @task do |f| %>
     <div class="form-group">
       <%= f.label :title, class: "text-white" %>
       <%= f.text_field :title %>
@@ -37,6 +37,6 @@
       <%= f.select :status,[['未着手','未着手'],['処理中','処理中'],['完了','完了']], :prompt=>"未着手"%>
     </div>
 
-    <%= f.submit "登録", class: "btn-block btn-white" %>
+    <%= f.submit "修正", class: "btn-block btn-white" %>
     <% end %>
-    <%= button_to '一覧', pages_index_path,method: :get %>
+    <%= button_to '一覧', tasks_index_path,method: :get %>

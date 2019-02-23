@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-  get 'pages/new'
-  resources :pages
+  get 'tasks/index'
+  get 'tasks/new'
+  resources :tasks
 
   get 'sessions/new'
 
