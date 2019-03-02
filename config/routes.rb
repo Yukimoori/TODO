@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'tasks/index'
   get 'tasks/new'
+  patch 'tasks/start'
+
   resources :tasks
 
   get 'sessions/new'

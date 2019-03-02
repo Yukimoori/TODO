@@ -6,8 +6,8 @@
   <th>No.</th>
   <th>title</th>
   <th>note</th>
-  <th>作業開始日</th>
   <th>作業終了予定日</th>
+  <th>作業開始日</th>
   <th>作業終了日</th>
   <th>優先度</th>
   <th>ステータス</th>
@@ -21,13 +21,19 @@
   <td><%= task.id %></td>
   <td><%= task.title %></td>
   <td><%= task.note %></td>
-  <td><%= task.op_start %></td>
   <td><%= task.op_expection %></td>
-  <td><%= task.op_finished %></td>
+
+  <% if task.op_start != "nil" %>
+  <td><%= task.updated_at %></td>
+  <% else %>
+  <td><%= button_to "開始" ,tasks_start_path(id: task.id), method: :patch %></td>
+  <% end %>
+
+  <td><%= button_to "終了" %></td>
   <td><%= task.priority %></td>
   <td><%= task.status %></td>
   <td><%= button_to "編集" ,edit_task_path(id: task.id),method: :get %></td>
-  <td><%= button_to "削除" ,task_path(id: task.id),method: :delete,data:{confirm:"本当に削除しますか？"} %></td>
+  <td><%= button_to "削除" ,task_path(id: task.id),method: :delete, data:{confirm:"本当に削除しますか？"} %></td>
 <% end %>
 </tr>
 </tbody>
