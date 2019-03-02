@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_085419) do
     t.string "title"
     t.string "note"
     t.date "op_expection"
-    t.date "op_start"
+    t.integer "op_start"
     t.date "op_finished"
     t.string "priority"
     t.string "status", default: "未着手"

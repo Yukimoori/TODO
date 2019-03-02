@@ -23,10 +23,10 @@
   <td><%= task.note %></td>
   <td><%= task.op_expection %></td>
 
-  <% if task.op_start.present? %>
-  <td><%= button_to "開始" ,tasks_start_path(id: task.id), method: :patch %></td>
-  <% else %>
+  <% if task.op_start != "nil" %>
   <td><%= task.updated_at %></td>
+  <% else %>
+  <td><%= button_to "開始" ,tasks_start_path(id: task.id), method: :patch %></td>
   <% end %>
 
   <td><%= button_to "終了" %></td>
