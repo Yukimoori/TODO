@@ -27,6 +27,12 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def start
+    @task = Task.find(params[:id])
+    @task.save( op_start:  'a' )
+    redirect_to tasks_path
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
