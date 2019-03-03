@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
     if @task.save
       redirect_to tasks_index_path, success: '投稿に成功しました'
     else
@@ -29,8 +29,13 @@ class TasksController < ApplicationController
 
   def start
     @task = Task.find(params[:id])
-    # @task.op_start=1
-    @task.update_attributes( :op_start => 1 )
+    @task.update_attributes( :op_start => 1  )
+    redirect_to tasks_path
+  end
+
+  def finished
+    @task = Task.find(params[:id])
+    @task.update_attributes( :op_finished => 1  )
     redirect_to tasks_path
   end
 

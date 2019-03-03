@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'tasks/index'
   get 'tasks/new'
   patch 'tasks/start'
+  patch 'tasks/finished'
 
   resources :tasks
 

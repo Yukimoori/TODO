@@ -15,7 +15,7 @@
   <th>削除</th>
   </tr>
   </thead>
-<% @tasks.each do |task| %>
+<% current_user.tasks.each do |task|%>
 <tbody>
   <tr>
   <td><%= task.id %></td>
@@ -23,19 +23,22 @@
   <td><%= task.note %></td>
   <td><%= task.op_expection %></td>
 
-  <% if task.op_start != "nil" %>
-  <td><%= task.updated_at %></td>
-  <% else %>
+  <% if task.op_start.blank? %>
   <td><%= button_to "開始" ,tasks_start_path(id: task.id), method: :patch %></td>
+  <% else %>
+  <td><%= task.updated_at %></td>
   <% end %>
-
-  <td><%= button_to "終了" %></td>
+  <% if task.op_finished.blank? %>
+  <td><%= button_to "終了" ,tasks_finished_path(id: task.id), method: :patch %></td>
+  <% else %>
+  <td><%= task.updated_at %></td>
+  <% end %>
   <td><%= task.priority %></td>
   <td><%= task.status %></td>
   <td><%= button_to "編集" ,edit_task_path(id: task.id),method: :get %></td>
   <td><%= button_to "削除" ,task_path(id: task.id),method: :delete, data:{confirm:"本当に削除しますか？"} %></td>
-<% end %>
 </tr>
 </tbody>
+<% end %>
 </table>
 <%= button_to '新規作成', new_task_path,method: :get %>

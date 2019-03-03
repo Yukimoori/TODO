@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_085419) do
+ActiveRecord::Schema.define(version: 2019_03_02_145321) do
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "note"
     t.date "op_expection"
     t.integer "op_start"
-    t.date "op_finished"
+    t.integer "op_finished"
     t.string "priority"
     t.string "status", default: "未着手"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
