@@ -29,13 +29,15 @@ class TasksController < ApplicationController
 
   def start
     @task = Task.find(params[:id])
-    @task.update_attributes( :op_start => 1  )
+    @op_start=Date.today
+    @task.update_attributes( :op_start => @op_start )
     redirect_to tasks_path
   end
 
   def finished
     @task = Task.find(params[:id])
-    @task.update_attributes( :op_finished => 1  )
+    @op_finished=Date.today
+    @task.update_attributes( :op_finished => @op_finished  )
     redirect_to tasks_path
   end
 

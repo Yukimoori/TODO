@@ -26,12 +26,12 @@
   <% if task.op_start == nil %>
   <td><%= button_to "開始" ,tasks_start_path(id: task.id), method: :patch %></td>
   <% else %>
-  <td><%= task.updated_at %></td>
+  <td><%= task.op_start %></td>
   <% end %>
   <% if task.op_finished.blank? %>
   <td><%= button_to "終了" ,tasks_finished_path(id: task.id), method: :patch %></td>
   <% else %>
-  <td><%= task.updated_at %></td>
+  <td><%= task.op_finished %></td>
   <% end %>
   <td><%= task.priority %></td>
   <td><%= task.status %></td>
