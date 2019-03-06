@@ -52,6 +52,7 @@ test:
 #
 production:
 <<: *default
+database: todo
 adapter: postgresql
 encoding: unicode
 pool: 5
