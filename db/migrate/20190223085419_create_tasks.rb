@@ -4,10 +4,10 @@ class CreateTasks < ActiveRecord::Migration[5.2]
     t.string :title
     t.string :note
     t.date :op_expection
-    t.date :op_start
+    t.date :op_started
     t.date :op_finished
     t.string :priority
-    t.string :status, default: "未着手"
+    t.integer :status, default: 0
 
     t.timestamps
   end

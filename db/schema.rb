@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2019_03_02_145321) do
     t.string "title"
     t.string "note"
     t.date "op_expection"
-    t.date "op_start"
+    t.date "op_started"
     t.date "op_finished"
     t.string "priority"
-    t.string "status", default: "未着手"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
