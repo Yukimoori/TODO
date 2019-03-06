@@ -16,7 +16,9 @@ default: &default
   username: root
   password:
   socket: /tmp/mysql.sock
+  # ↑mac
   # socket: /var/run/mysqld/mysqld.sock
+  # ↑windows
 
 development:
   <<: *default
