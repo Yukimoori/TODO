@@ -51,7 +51,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-<<: *default
-adapter: postgresql
-encoding: unicode
-pool: 5
+  <<: *default
+  database: TODO_production
+  username: TODO
+  password: <%= ENV['TODO_DATABASE_PASSWORD'] %>
