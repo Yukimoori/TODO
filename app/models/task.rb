@@ -4,4 +4,12 @@ class Task < ApplicationRecord
 
   enum status:{untouched: 0,operating: 1,finished: 2}
 
+  def self.search(search)
+    if search
+      Task.where(['title LIKE ?', "%#{search}%"])
+    else
+      Task.all
+    end
+    end
+
 end

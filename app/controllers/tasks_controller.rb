@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
+    @tasks = current_user.tasks.search(params[:search])
   end
 
   def edit
@@ -47,6 +48,10 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
     redirect_to tasks_path
+  end
+
+  def search
+    @tasks = Task.search(params[:search])
   end
 
   private
