@@ -7,9 +7,9 @@
   <%= label_tag :op_expection, "作業終了予定日" %>
   <%= date_field_tag :op_expection , params[:op_expection] %>
   <%= label_tag :priority, "優先度" %>
-  <%= select_tag :priority , options_for_select(Task.priorities), include_blank: true %>
+  <%= select_tag :priority , options_for_select(Task.priorities_i18n.invert, {}), include_blank: true %>
   <%= label_tag :status, "ステータス" %>
-  <%= select_tag :status , options_for_select(Task.statuses), include_blank: true %>
+  <%= select_tag :status , options_for_select(Task.statuses_i18n.invert, {}), include_blank: true %>
   <%= submit_tag 'Search', :title => nil %>
 <% end %>
 
@@ -50,7 +50,11 @@
     <td><%= task.op_finished %></td>
   <% end %>
 
-  <td><%= task.priority %></td>
+  <% if task.high? %>
+    <td><%= "高" %></td>
+  <% else %>
+    <td><%= "低" %></td>
+  <% end %>
 
   <% if task.untouched? %>
     <td><%= "未着手" %></td>
