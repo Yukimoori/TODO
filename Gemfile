@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bcrypt'
 gem "jquery-rails"
-
+gem 'enum_help'
 
 
 group :development, :test do

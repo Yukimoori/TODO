@@ -1,0 +1,5 @@
+ja:
+  priority:
+    task:
+      high: '高'
+      low: '低'

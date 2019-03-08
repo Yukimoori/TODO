@@ -1,6 +1,21 @@
 class TasksController < ApplicationController
   def index
-    @tasks = current_user.tasks.search(params[:search])
+    @tasks = current_user.tasks.all
+    if params[:title].present?
+      @tasks = current_user.tasks.get_by_title params[:title]
+    end
+    if params[:op_started].present?
+      @tasks = current_user.tasks.get_by_op_started params[:op_started]
+    end
+    if params[:op_expection].present?
+      @tasks = current_user.tasks.get_by_op_expection params[:op_expection]
+    end
+    if params[:priority].present?
+      @tasks = current_user.tasks.get_by_priority params[:priority]
+    end
+    if params[:status].present?
+      @tasks = current_user.tasks.get_by_status params[:status]
+    end
   end
 
   def edit

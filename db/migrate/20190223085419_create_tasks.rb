@@ -6,7 +6,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
     t.date :op_expection
     t.date :op_started
     t.date :op_finished
-    t.string :priority
+    t.integer :priority
     t.integer :status, default: 0
 
     t.timestamps
