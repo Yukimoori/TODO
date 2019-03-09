@@ -4,7 +4,7 @@ class Task < ApplicationRecord
 
   enum status:{untouched: 0,operating: 1,finished: 2}
   enum priority: { high: 0, low: 1 }
-
+  
   class << self
     def localed_priorities
       priorities.keys.map do |s|

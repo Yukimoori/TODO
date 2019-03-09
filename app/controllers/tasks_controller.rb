@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
+  helper_method :sort_column, :sort_direction
   def index
     @tasks = current_user.tasks.all
+    @tasks = Task.all.order(sort_column + ' ' + sort_direction)
     if params[:title].present?
       @tasks = current_user.tasks.get_by_title params[:title]
     end
@@ -71,6 +73,14 @@ class TasksController < ApplicationController
   private
     def task_params
       params.require(:task).permit(:title,:note,:op_start,:op_expection,:op_finished,:priority,:status)
+    end
+
+    def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
+
+    def sort_column
+      Task.column_names.include?(params[:sort]) ? params[:sort] : "title"
     end
 
 end
