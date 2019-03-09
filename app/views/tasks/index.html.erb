@@ -30,10 +30,10 @@
   <th>削除</th>
   </tr>
   </thead>
-<% @tasks.each do |task|%>
+<% @tasks.each_with_index do |task,i|%>
 <tbody>
   <tr>
-  <td><%= task.id %></td>
+  <td><%= i+1 %></td>
   <td><%= task.title %></td>
   <td><%= task.note %></td>
   <td><%= task.op_expection %></td>
