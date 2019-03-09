@@ -4,10 +4,6 @@ ja:
       priority:
         high: 高
         low: 低
-
-ja:
-  enums:
-    task:
       status:
         untouched: 未着手
         operating: 処理中
