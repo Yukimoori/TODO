@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_02_145321) do
     t.date "op_expection"
     t.date "op_started"
     t.date "op_finished"
-    t.integer "priority"
+    t.integer "priority", default: 0
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
