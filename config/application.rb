@@ -18,5 +18,7 @@ module TODO
     # the framework and any gems in your application.
     I18n.available_locales = %i(ja en)
     I18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
