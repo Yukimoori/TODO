@@ -33,7 +33,7 @@
 <% @tasks.each_with_index do |task,i|%>
 <tbody>
   <tr>
-  <td><%= i+1 %></td>
+  <td><%= i+1 %> :<%= p task %></td>
   <td><%= task.title %></td>
   <td><%= task.note %></td>
   <td><%= task.op_expection %></td>
@@ -50,7 +50,7 @@
     <td><%= task.op_finished %></td>
   <% end %>
 
-  <% if task.high? %>
+  <% if (task.priority == "high") %>
     <td><%= "高" %></td>
   <% else %>
     <td><%= "低" %></td>
