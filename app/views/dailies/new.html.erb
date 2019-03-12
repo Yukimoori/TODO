@@ -1,0 +1,35 @@
+<h1 class="text-center text-white">daily Detail</h1>
+  <%= form_for @daily do |f| %>
+    <div class="form-group">
+      <%= f.label :日付, class: "text-white" %>
+      <%= f.date_field :date %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :企業名, class: "text-white" %>
+      <%= f.text_area :company_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :場所, class: "text-white" %>
+      <%= f.radio_button :place,[["客先","客先"],["来客","来客"]], class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :状況, class: "text-white" %>
+      <%= f.radio_button :status,[["提案中","提案中"],["受注","受注"]], class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :見込み, class: "text-white" %>
+      <%= f.radio_button :expectation,[["A","A"],["B","B"]], class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :コメント, class: "text-white" %>
+      <%= f.text_area :comment, class: "form-control" %>
+    </div>
+
+    <%= f.submit "登録", class: "btn-block btn-white" %>
+    <% end %>
+    <%= button_to '一覧', dailies_index_path,method: :get %>

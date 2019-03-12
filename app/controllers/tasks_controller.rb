@@ -30,9 +30,9 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.new(task_params)
     if @task.save
-      redirect_to tasks_index_path, success: '投稿に成功しました'
+      redirect_to tasks_index_path, success: '成功しました'
     else
-      flash.now[:danger] = "投稿に失敗しました"
+      flash.now[:danger] = "失敗しました"
       render :new
     end
   end

@@ -1,0 +1,33 @@
+<table>
+
+<caption>daily index</caption>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>日付</th>
+  <th>企業名</th>
+  <th>場所</th>
+  <th>状況</th>
+  <th>見込み</th>
+  <th>コメント</th>
+  <th>編集</th>
+  <th>削除</th>
+  </tr>
+  </thead>
+<% @dailies.each do |daily|%>
+<tbody>
+  <tr>
+  <td><%= daily.id %></td>
+  <td><%= daily.date %></td>
+  <td><%= daily.company_name %></td>
+  <td><%= daily.place %></td>
+  <td><%= daily.status %></td>
+  <td><%= daily.expectation %></td>
+  <td><%= daily.comment %></td>
+  <td><%= button_to "編集" %></td>
+  <td><%= button_to "削除" %></td>
+</tr>
+</tbody>
+<% end %>
+</table>
+<%= button_to '新規作成', new_daily_path,method: :get %>

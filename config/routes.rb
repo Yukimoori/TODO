@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dailies
+  get 'dailies/index'
   get 'tasks/index'
   get 'tasks/new'
   patch 'tasks/start'
