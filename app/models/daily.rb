@@ -1,6 +1,6 @@
 class Daily < ApplicationRecord
-  # validates :date , presence: true
-  # validates :companyName , presence: true
+  validates :date , presence: true
+  validates :companyName , presence: true
 
   enum tool: { tel: 0, mail: 1, meeting: 2, DM: 3}
   enum place: { customer: 0, guest: 1}
