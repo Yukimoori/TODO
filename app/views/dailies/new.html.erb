@@ -7,22 +7,35 @@
 
     <div class="form-group">
       <%= f.label :企業名, class: "text-white" %>
-      <%= f.text_area :company_name, class: "form-control" %>
+      <%= f.text_area :companyName, class: "form-control" %>
     </div>
 
     <div class="form-group">
       <%= f.label :場所, class: "text-white" %>
-      <%= f.radio_button :place,[["客先","客先"],["来客","来客"]], class: "form-control" %>
+      <%= f.label :客先 %>
+      <%= f.radio_button :place, :customer %>
+      <%= f.label :来客 %>
+      <%= f.radio_button :place, :guest %>
     </div>
 
     <div class="form-group">
       <%= f.label :状況, class: "text-white" %>
-      <%= f.radio_button :status,[["提案中","提案中"],["受注","受注"]], class: "form-control" %>
+      <%= f.label :提案中 %>
+      <%= f.radio_button :status, :proposal %>
+      <%= f.label :受注 %>
+      <%= f.radio_button :status, :ordered %>
     </div>
 
     <div class="form-group">
-      <%= f.label :見込み, class: "text-white" %>
-      <%= f.radio_button :expectation,[["A","A"],["B","B"]], class: "form-control" %>
+      <%= f.label :見込み, class: "text-white" %><br />
+      <%= f.label :A %>
+      <%= f.radio_button :expectation, :a %>
+      <%= f.label :B %>
+      <%= f.radio_button :expectation, :b %>
+      <%= f.label :C %>
+      <%= f.radio_button :expectation, :c %>
+      <%= f.label :D %>
+      <%= f.radio_button :expectation, :d %>
     </div>
 
     <div class="form-group">
@@ -32,4 +45,4 @@
 
     <%= f.submit "登録", class: "btn-block btn-white" %>
     <% end %>
-    <%= button_to '一覧', dailies_index_path,method: :get %>
+    <%= button_to '一覧', dailies_path,method: :get %>

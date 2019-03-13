@@ -52,7 +52,8 @@ test:
 #
 production:
   <<: *default
-  database: todo
-  adapter: postgresql
+  # database: todo
+  # adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   pool: 5

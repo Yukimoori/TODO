@@ -1,5 +1,5 @@
 <%= button_to '新規作成', new_task_path,method: :get %>
-<%= button_to '日報作成', dailies_new_path,method: :get %>
+<%= button_to '日報作成', dailies_path,method: :get %>
 <p>検索</p>
 <%= form_tag tasks_path, :method => 'get' do %>
   <%= label_tag :title %>

@@ -2,7 +2,7 @@ class CreateDailies < ActiveRecord::Migration[5.2]
   def change
     create_table :dailies do |t|
       t.date :date
-      t.string :company_name
+      t.string :companyName
       t.integer :place, default:0
       t.integer :status, default:0
       t.integer :expectation, default:0

@@ -17,9 +17,15 @@ class DailiesController < ApplicationController
     end
   end
 
+  def destroy
+    @daily = Daily.find(params[:id])
+    @daily.destroy
+    redirect_to dailies_path
+  end
+
   private
     def daily_params
-      params.require(:daily).permit(:date,:cocompany_name,:place,:status,:expection,:comment)
+      params.require(:daily).permit(:date,:companyName,:place,:status,:expectation,:comment)
     end
 
 end

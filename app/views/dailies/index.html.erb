@@ -10,7 +10,6 @@
   <th>状況</th>
   <th>見込み</th>
   <th>コメント</th>
-  <th>編集</th>
   <th>削除</th>
   </tr>
   </thead>
@@ -19,13 +18,32 @@
   <tr>
   <td><%= daily.id %></td>
   <td><%= daily.date %></td>
-  <td><%= daily.company_name %></td>
-  <td><%= daily.place %></td>
-  <td><%= daily.status %></td>
-  <td><%= daily.expectation %></td>
+  <td><%= daily.companyName %></td>
+
+  <% if daily.customer? %>
+    <td><%= "客先" %></td>
+  <% else %>
+    <td><%= "来客" %></td>
+  <% end %>
+
+  <% if daily.proposal? %>
+    <td><%= "提案中" %></td>
+  <% else %>
+    <td><%= "受注" %></td>
+  <% end %>
+
+  <% if daily.a? %>
+    <td><%= "A" %></td>
+  <% elsif daily.b? %>
+    <td><%= "B" %></td>
+  <% elsif daily.c? %>
+    <td><%= "C" %></td>
+  <% else %>
+    <td><%= "D" %></td>
+  <% end %>
+
   <td><%= daily.comment %></td>
-  <td><%= button_to "編集" %></td>
-  <td><%= button_to "削除" %></td>
+  <td><%= button_to "削除",daily_path(id: daily.id),method: :delete, data:{confirm:"本当に削除しますか？"}  %></td>
 </tr>
 </tbody>
 <% end %>

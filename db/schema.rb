@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_140435) do
 
   create_table "dailies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date"
-    t.string "company_name"
+    t.string "companyName"
     t.integer "place", default: 0
     t.integer "status", default: 0
     t.integer "expectation", default: 0
