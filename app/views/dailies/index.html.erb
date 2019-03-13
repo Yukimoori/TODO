@@ -20,13 +20,25 @@
   <td><%= daily.date %></td>
   <td><%= daily.companyName %></td>
 
+  <% if daily.tel? %>
+  <td><%= "電話" %></td>
+  <% elsif daily.mail? %>
+  <td><%= "メール" %></td>
+  <% elsif daily.meeting? %>
+  <td><%= "対面" %></td>
+  <% else %>
+  <td><%= "DM" %></td>
+  <% end %>
+
   <% if daily.customer? %>
     <td><%= "客先" %></td>
   <% else %>
     <td><%= "来客" %></td>
   <% end %>
 
-  <% if daily.proposal? %>
+  <% if daily.hearing? %>
+    <td><%= "ヒアリング" %></td>
+  <% elsif daily.proposal? %>
     <td><%= "提案中" %></td>
   <% else %>
     <td><%= "受注" %></td>

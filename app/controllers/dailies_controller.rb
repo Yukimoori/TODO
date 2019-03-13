@@ -25,7 +25,7 @@ class DailiesController < ApplicationController
 
   private
     def daily_params
-      params.require(:daily).permit(:date,:companyName,:place,:status,:expectation,:comment)
+      params.require(:daily).permit(:date,:companyName,:tool,:place,:status,:expectation,:comment)
     end
 
 end
