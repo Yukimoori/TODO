@@ -55,5 +55,5 @@ production:
   # database: todo
   # adapter: postgresql
   adapter: mysql2
-  encoding: unicode
+  # encoding: unicode
   pool: 5
