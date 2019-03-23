@@ -36,8 +36,8 @@
 <tbody>
   <tr>
   <td><%= i+1 %></td>
-  <td><%= task.title %></td>
-  <td><%= task.note %></td>
+  <td><%= task.title.truncate(10, omission:'...') %></td>
+  <td><%= task.note.truncate(20, omission:'...') %></td>
   <td><%= task.op_expection %></td>
 
   <% if task.untouched? %>

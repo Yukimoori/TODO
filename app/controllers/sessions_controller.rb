@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
   def new
+    if logged_in?
+    redirect_to tasks_index_path, success: 'ログインに成功しました'
+    else
+      @user = User.new()
+    end
   end
 
   def create
