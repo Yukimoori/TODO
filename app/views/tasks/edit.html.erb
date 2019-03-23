@@ -19,7 +19,7 @@
 
     <div class="form-group">
       <%= f.label :優先度, class: "text-white" %>
-      <%= f.select :priority,[['高','高'],['低','低']]%>
+      <%= f.select :priority, Task.priorities_i18n.invert, {}, class: 'form-control' %>
     </div>
 
     <%= f.submit "修正", class: "btn-block btn-white" %>
