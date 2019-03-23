@@ -6,6 +6,7 @@
   <th>No.</th>
   <th>日付</th>
   <th>企業名</th>
+  <th>手段</th>
   <th>場所</th>
   <th>状況</th>
   <th>見込み</th>
@@ -54,7 +55,7 @@
     <td><%= "D" %></td>
   <% end %>
 
-  <td><%= daily.comment %></td>
+  <td><%= daily.comment.truncate(10, omission:'...') %></td>
   <td><%= button_to "削除",daily_path(id: daily.id),method: :delete, data:{confirm:"本当に削除しますか？"}  %></td>
 </tr>
 </tbody>
