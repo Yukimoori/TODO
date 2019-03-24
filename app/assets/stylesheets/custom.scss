@@ -1,0 +1,24 @@
+.text-center {
+  background-color: black;
+  color: #fff;
+  width: 300px;
+
+}
+
+.btn-a {
+  width:150px;
+  margin: 10px auto;
+  border: 1px solid;
+  font-size: 15px;
+  background-color:lightgray;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.top-hero-wrapper {
+}
+
+.top-hero-container {
+}
