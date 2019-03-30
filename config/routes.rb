@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :tasks
 
   get 'sessions/new'
+  post 'sessions/create'
 
   root'users#index'
   resources :users

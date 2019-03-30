@@ -1,3 +1,15 @@
-<h2 class="text-center">Todo login</h2>
-<%= button_to 'Sign up', new_user_path, class: 'btn-a' %>
-<%= button_to 'log in', login_path,method: :get,class: 'btn-a'%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 text-center">
+      <h2>Todo login</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-4 col-md-2">
+      <%= button_to 'Sign up', new_user_path, class: 'btn-a' %>
+    </div>
+    <div class="col-md-2">
+      <%= button_to 'log in', login_path,method: :get,class: 'btn-a'%>
+    </div>
+  </div>
+</div>

@@ -1,23 +1,38 @@
-<%= button_to '新規作成', new_task_path,method: :get %>
+<div class="row">
+  <div class="col-sm-2">
+    <%= button_to '新規作成', new_task_path,method: :get %>
+  </div>
+    <div class="col-sm-2">
 <%= button_to '日報作成', dailies_path,method: :get %>
-<p>検索</p>
+</div>
+</div>
+
+<h3>検索</h3>
 <%= form_tag tasks_path, :method => 'get' do %>
-  <%= label_tag :title %>
-  <%= text_field_tag :title , params[:title] %>
+
+  <br><%= label_tag :title %>
+  <%= text_field_tag :title , params[:title] %></br>
+
   <%= label_tag :op_started, "作業開始日" %>
   <%= date_field_tag :op_started , params[:op_started] %>
+
   <%= label_tag :op_expection, "作業終了予定日" %>
   <%= date_field_tag :op_expection , params[:op_expection] %>
-  <%= label_tag :priority, "優先度" %>
+
+  <br><%= label_tag :priority, "優先度" %>
   <%= select_tag :priority , options_for_select(Task.priorities_i18n.invert, {}), include_blank: true %>
+
   <%= label_tag :status, "ステータス" %>
-  <%= select_tag :status , options_for_select(Task.statuses_i18n.invert, {}), include_blank: true %>
-  <%= submit_tag 'Search', :title => nil %>
+  <%= select_tag :status , options_for_select(Task.statuses_i18n.invert, {}), include_blank: true %></br>
+
+  <br>
+  <%= submit_tag 'Search', :title => nil %></br>
 <% end %>
 
-<table>
+ <div class="table-responsive">
+   <table class="table table-striped">
 
-<caption>TODO index</caption>
+<caption><h1 class="col-md-offset-4 col-md-4 text-center">TODO index</h1></caption>
 <thead>
 <tr>
   <th>No.</th>
@@ -37,7 +52,7 @@
   <tr>
   <td><%= i+1 %></td>
   <td><%= task.title.truncate(10, omission:'...') %></td>
-  <td><%= task.note.truncate(20, omission:'...') %></td>
+    <td><%= link_to task.note.truncate(20, omission:'...'), new_task_path, method: :get %></td>
   <td><%= task.op_expection %></td>
 
   <% if task.untouched? %>
@@ -72,4 +87,6 @@
 </tbody>
 <% end %>
 </table>
+</div>
+</div>
 <%= button_to "ログアウト" ,logout_path,method: :delete %>

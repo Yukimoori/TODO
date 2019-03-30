@@ -1,21 +1,32 @@
 <%= form_with(model: user, local: true) do |form| %>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-2">
+        <%= form.label :username%>
+        <%= form.text_field :username,class:"text-wide" %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="row">
+      <div class="col-md-offset-4 col-md-2">
+      <%= form.label :email %>
+      <%= form.text_field :email,class:"text-wide"  %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="row">
+      <div class="col-md-offset-4 col-md-2">
+      <%= form.label :password %>
+      <%= form.password_field :password,class:"text-wide"  %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-offset-4 col-md-2">
+      <%= form.submit%>
+      </div>
+    </div>
   </div>
 <% end %>

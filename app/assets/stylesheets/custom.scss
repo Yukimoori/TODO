@@ -1,15 +1,15 @@
 .text-center {
   background-color: black;
   color: #fff;
-  width: 300px;
-
+    margin-top:50px;
+    margin-bottom:20px;
 }
 
 .btn-a {
-  width:150px;
-  margin: 10px auto;
+  width: 116px;
+  margin: 10px;
   border: 1px solid;
-  font-size: 15px;
+  font-size: 25px;
   background-color:lightgray;
 
   &:hover {
@@ -17,6 +17,15 @@
   }
 }
 
+.text-wide{
+  width:300px;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.aa{
+  margin-top:30px;
+}
 .top-hero-wrapper {
 }
 
